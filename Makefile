@@ -1,12 +1,12 @@
-# Makefile for Hello, World! program
+# Makefile for Hello, World! program in C++
 
-CC = gcc
-CFLAGS = -Wall
+CXX = g++
+CXXFLAGS = -Wall
 
 all: hello
 
-hello: hello.c
-	$(CC) $(CFLAGS) -o hello hello.c
+hello: hello.cpp
+	$(CXX) $(CXXFLAGS) -o hello hello.cpp
 
 clean:
 	rm -f hello
