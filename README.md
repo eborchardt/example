@@ -1,4 +1,4 @@
-In your terminal, navigate to the directory containing both the "Makefile" and "hello.c" files.
+In your terminal, navigate to the directory containing both the "Makefile" and "hello.cpp" files.
 
 To compile the program, simply run the make command:
 
