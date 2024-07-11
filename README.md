@@ -16,4 +16,4 @@ To clean up and remove the generated executable, you can use the following comma
 
     make clean
 
-That's it! You've created a "Hello, World!" program using a Makefile and the make command with GCC.
+That's it! You've created a "Hello, World!" program using a Makefile and the make command with GCC. :)
