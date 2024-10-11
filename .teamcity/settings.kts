@@ -28,6 +28,7 @@ version = "2023.05"
 project {
 
     buildType(Helloworld)
+    buildType(StepsLinux)
 }
 
 object Helloworld : BuildType({
@@ -59,5 +60,28 @@ object Helloworld : BuildType({
             param("org.jfrog.artifactory.selectedDeployableServer.useSpecs", "false")
             param("org.jfrog.artifactory.selectedDeployableServer.uploadSpecSource", "Job configuration")
         }
+    }
+})
+
+object StepsLinux : BuildType({
+    name = "steps - Linux"
+    steps {
+        exec {
+            id = "simpleRunner"
+            path = "echo"
+            arguments = """"Hello there""""
+            dockerImage = "ubuntu:24.10"
+            dockerImagePlatform = ExecBuildStep.ImagePlatform.Linux
+        }
+    }
+    features {
+        dockerSupport {
+            loginToRegistry = on {
+                dockerRegistryId = "PROJECT_EXT_184"
+            }
+        }
+    }
+    requirements {
+        contains("teamcity.agent.name", "lin64")
     }
 })
